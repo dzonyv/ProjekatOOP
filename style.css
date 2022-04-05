@@ -1,0 +1,106 @@
+body {
+    background-color: white;
+    margin: 1;
+}
+h1 {
+    color: red;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 1ch;
+}
+h2 {
+    text-decoration: underline black;
+}
+.lige {
+    display: flex;
+    
+}
+a:hover{
+    color:red
+}
+p:hover{
+    color:red
+}
+.meni {
+    width: 90%;
+    margin: 0 auto;
+}
+header{
+    background-color: rgb(218, 208, 208);
+    font-family: sans-serif;
+    font-weight: 700;
+}
+header::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+.logo {
+    float: left;
+    width: 200px;
+}
+nav {
+    float: right;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}       
+
+nav li {
+    display: inline-block;
+    margin-left: 70px;
+    padding-top: 13px;
+
+    position: relative;
+}
+
+nav a {
+    color: #444;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+}   
+
+nav a:hover {
+    color: #000;
+}   
+
+nav a::before {
+    content: '';
+    display: block;
+    height: 5px;
+    background-color: #444;
+
+    position: absolute;
+    top: 0;
+    width: 0%;
+
+    transition: all ease-in-out 250ms;
+}
+
+nav a:hover::before {
+    width: 100%;
+}
+
+section{
+    background-color: azure;
+}
+footer{
+    background-color: aquamarine;
+    
+}
+blockquote {
+    font-style: italic;
+    font-size: 25px;
+    font-weight: bold;
+    color: black;
+    text-shadow: 3px 3px 5px black;
+    border-width: 1px;
+    border-color:rgb(0, 0, 0);
+    border-style: solid;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
+}
