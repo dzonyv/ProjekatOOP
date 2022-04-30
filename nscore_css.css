@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
 body {
-    background-color: rgb(4, 17, 41);
+    background-color: var(--primary-color);
     margin: 0;
 }
 .meni {
@@ -8,7 +8,7 @@ body {
     margin: 0 auto;
 }
 header{
-    background-color: rgb(14, 37, 58);
+    background-color: var(--primary-color);
     font-family: 'Bungee', cursive;;
     font-weight: 700;
 }
@@ -23,12 +23,14 @@ header::after {
 }
 nav {
     float: right;
+    justify-content: center;
 }
 
 nav ul {
     margin: 0;
     padding: 0;
     list-style: none;
+    
 }       
 
 nav li {
@@ -75,7 +77,7 @@ section{
     flex-flow: row wrap;
     padding: 30px;
     color: #fff;
-    background-color: rgb(14, 37, 58);
+    background-color: var(--primary-color);
     font-family:'Bungee', cursive; ;
     font-size: 12px;
     }
@@ -154,4 +156,87 @@ section{
     flex: 2 0px;
     }
     }
+    #icon{
+        width: 30px;
+        cursor: pointer;
+
+    }
+    .login-box{
+        width: 280px;
+        
+    }
+:root{
+    --primary-color:rgb(14, 37, 58);
+}
+.lightmode{
+    --primary-color: rgb(255, 255, 255);
+}
+.container{
+    position: static;
+    padding: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: 'Bungee', cursive;;
+    color: rgb(0, 0, 0);
+}
+.title-box{
+    margin: 25px 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    font-size: 1.5em;
+   
     
+}
+.title-box #goals{
+    font-size: 1.8em;
+}
+.team{
+    width: 100px;
+}
+.team img{
+    height: 54px;
+    width: 54px;
+}
+
+.matches-table{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+}
+.match-tile{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 10px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+.match-tile img{
+    width: 52px;
+    height: 52px;
+}
+.match-tile p{
+    font-size: 1.2rem;
+}
+
+.match-tile #goals{
+    font-size: 1.8rem;
+}
+.match-tile .team{
+    width: 100px;
+}
+#korisnik{
+    color: rgb(216, 203, 194);
+}
+.korisnik{
+    border-radius: 25px;
+    background-color: rgb(253, 253, 253);
+}

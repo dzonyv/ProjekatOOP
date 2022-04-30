@@ -2,11 +2,10 @@
 <html lang="en">
 <head>
     <link rel='stylesheet' type='text/css' href='nscore_css.css'>
-    <script src="nsjs.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NScore: Live Football Scores</title>
+    <title>NScore | Login</title>
 </head>
 <body>
     <header>
@@ -19,48 +18,28 @@
                 <li><a href="Nsocre/Basketball.html">Basketball</a></li>
                 <li><a href="Nscore/Tennis.html">Tennis</a></li>
                 <li><a href="NScore/Favorites.html">Favorites</a></li>
-                <li><a href="login.html">Login</a></li>
+                <li><a href="NScore/login.html">Login</a></li>
                 <li><img src="lamp.png" id="icon"></li>
-                <li><div class="korisnik">
-                  <p id="korisnik">
-                  </p>
-                </div></li>
               </ul>
-              <script>myFunction()</script>
             </nav>
           </div>
-          <script>
-            var icon=document.getElementById("icon");
-            icon.onclick=function(){
-              document.body.classList.toggle("lightmode");
-              }
-          </script>
     </header>
 
     <section>
-      <div class="container">
-        <h1>ScoreBoard</h1>
-        <div class="title-box">
-            <p>Local Team</p>
-            <p id="elapsed">45'</p>
-            <p>Visitor Team</p>
-        </div>
-        <div class="title-box">
-            <div class="team">
-                <img  id="homeLogo" >
-                <p id="homeName">Team name</p>
+        <div class="login-box">
+            <h1>Login</h1>
+            <div class="textbox">
+              <i class="fas fa-user"></i>
+              <input type="text" placeholder="Username">
             </div>
-            <p id="goals">3  -  1</p>
-            <div class="team">
-                <img id="awayLogo">
-                <p id="awayName">Team name</p>
+          
+            <div class="textbox">
+              <i class="fas fa-lock"></i>
+              <input type="password" placeholder="Password">
             </div>
+          
+            <input type="button" class="btn" value="Sign in">
           </div>
-          <hr>
-          <div id="matchTable" class="matches-table">
-
-          </div>
-      </div>
     </section>
 
     <footer class="footer">
