@@ -1,14 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
 body {
-    background-color: var(--primary-color);
+    background-color: rgb(14, 37, 58);
     margin: 0;
+    padding: 0;
+    
 }
 .meni {
     width: 90%;
     margin: 0 auto;
 }
 header{
-    background-color: var(--primary-color);
+    background-color: rgb(14, 37, 58);
     font-family: 'Bungee', cursive;;
     font-weight: 700;
 }
@@ -70,14 +72,14 @@ nav a:hover::before {
 }
 
 section{
-    background-color: azure;
+    background-color: var(--primary-color);
 }
 .footer {
     display: flex;
     flex-flow: row wrap;
     padding: 30px;
     color: #fff;
-    background-color: var(--primary-color);
+    background-color:rgb(14, 37, 58) ;
     font-family:'Bungee', cursive; ;
     font-size: 12px;
     }
@@ -166,10 +168,10 @@ section{
         
     }
 :root{
-    --primary-color:rgb(14, 37, 58);
+    --primary-color: rgb(255, 255, 255);
 }
 .lightmode{
-    --primary-color: rgb(255, 255, 255);
+    --primary-color:rgb(14, 37, 58);
 }
 .container{
     position: static;
@@ -230,6 +232,12 @@ section{
 .match-tile #goals{
     font-size: 1.8rem;
 }
+.match-tile .minutaza{
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
 .match-tile .team{
     width: 100px;
 }
@@ -240,3 +248,106 @@ section{
     border-radius: 25px;
     background-color: rgb(253, 253, 253);
 }
+input[type="checkbox"]
+{
+    -webkit-appearance: none;
+    visibility: hidden;
+    display: none;
+    
+}
+.check{
+    margin-top: -12px;
+    position: absolute;
+    display: block;
+    width: 40px;
+    height: 20px;
+    background:rgb(255, 255, 255);
+    cursor: pointer;
+    border-radius: 20px;
+    transition: ease-in 0.5s;
+    
+}
+input[type="checkbox"]:checked ~ .check
+{
+    background: #fff;
+    
+
+}
+.check::before{
+    content: '';
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    background: rgb(14, 37, 58);
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    transition: 0.5s;
+}
+input[type="checkbox"]:checked ~ .check:before
+{
+    transform: translateX(-20px);
+
+}
+.check::after{
+    content: '';
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    transition: 0.5s;
+}
+input[type="checkbox"]:checked ~ .check:after
+{
+    transform: translateX(0px);
+
+}
+#leagues {
+    position: static;
+    padding: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Bungee', cursive;;
+    color: rgb(0, 0, 0);
+    display: inline;
+    align-items: left;
+    
+}
+.linklige{
+    color: black;
+    text-align: right;
+}
+#cups {
+    position: static;
+    padding: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: 'Bungee', cursive;;
+    color: rgb(0, 0, 0);
+    display: inline;
+    align-items: left;
+}
+
+#leagues img{
+    max-width: 100px;
+    max-height: 100px;
+}
+.cup-tile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#cups img{
+    max-width: 100px;
+    max-height: 100px;
+}
+.league-tile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+

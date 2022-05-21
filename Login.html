@@ -19,10 +19,19 @@
                 <li><a href="Nscore/Tennis.html">Tennis</a></li>
                 <li><a href="NScore/Favorites.html">Favorites</a></li>
                 <li><a href="NScore/login.html">Login</a></li>
-                <li><img src="lamp.png" id="icon"></li>
+                <li><label>
+                  <input type="checkbox" id="darkm">
+                  <span class="check"></span>
+                </label></li>
               </ul>
             </nav>
           </div>
+          <script>
+            var darkm=document.getElementById("darkm");
+            darkm.onclick=function(){
+              document.body.classList.toggle("lightmode");
+              }
+          </script>
     </header>
 
     <section>

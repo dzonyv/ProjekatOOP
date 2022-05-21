@@ -1,20 +1,19 @@
-document.addEventListener("DOMContentLoaded", function () {
-  function myFunction() {
+/*  function myFunction() {
     document.getElementById("korisnik").innerHTML = User.firstName.toString() + " " + User.lastName.toString();
   }
   var User = {
     firstName: "Nikola",
     lastName: "Vlacic",
 
-  }
-});
+  };
+*/
 
-var elapsedTime = document.querySelector("#elapsed");
-var homeTeamImage = document.querySelector("#homeLogo");
-var homeTeamName = document.querySelector("#homeName");
-var awayTeamImage = document.querySelector("#awayLogo");
-var awayTeamName = document.querySelector("#awayName");
-var lastMatchGoal = document.querySelector("#goals");
+//var elapsedTime = document.querySelector("#elapsed");
+//var homeTeamImage = document.querySelector("#homeLogo");
+//var homeTeamName = document.querySelector("#homeName");
+//var awayTeamImage = document.querySelector("#awayLogo");
+//var awayTeamName = document.querySelector("#awayName");
+//var lastMatchGoal = document.querySelector("#goals");
 var matchTable = document.querySelector("#matchTable");
 
 
@@ -23,6 +22,11 @@ function addMatchTile(data){
     //createing the tile div
     var matchtile = document.createElement('div');
     matchtile.classList.add("match-tile");
+    
+    var minutaza = document.createElement('div');
+    minutaza.classList.add("minutaza");
+    minutaza.innerHTML=data['fixture']['status']['elapsed'] + "'";
+    
 
     //creating the home match box
     var homeTeam = document.createElement('div');
@@ -52,8 +56,8 @@ function addMatchTile(data){
     //append all the element to the parent
     matchtile.appendChild(homeTeam);
     matchtile.appendChild(score);
+    matchtile.appendChild(minutaza);
     matchtile.appendChild(awayTeam);
-
     matchTable.appendChild(matchtile);
 } 
 
@@ -72,14 +76,14 @@ fetch("https://api-football-v1.p.rapidapi.com/v3/fixtures?live=all", {
     var teams = matchesList[0]['teams'];
     console.log(matchesList.length);
    //Now let's set our first match
-   elapsedTime.innerHTML = fixture['status']['elapsed'] + "'";
-   homeTeamImage.src = teams['home']['logo'];
-   homeTeamName.innerHTML = teams['home']['name'];
-   awayTeamImage.src = teams['away']['logo'];
-   awayTeamName.innerHTML = teams['away']['name'];
-   lastMatchGoal.innerHTML = goals['home']+ " - " + goals['away'];
+   //elapsedTime.innerHTML = fixture['status']['elapsed'] + "'";
+   //homeTeamImage.src = teams['home']['logo'];
+   //homeTeamName.innerHTML = teams['home']['name'];
+   //awayTeamImage.src = teams['away']['logo'];
+   //awayTeamName.innerHTML = teams['away']['name'];
+   //lastMatchGoal.innerHTML = goals['home']+ " - " + goals['away'];
 
-   for(var i = 1; i<matchesList.length;i++){
+   for(var i = 0; i<matchesList.length;i++){
        addMatchTile(matchesList[i]);
    }
 
