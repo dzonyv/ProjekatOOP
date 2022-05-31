@@ -83,13 +83,14 @@ fetch("https://api-football-v1.p.rapidapi.com/v3/fixtures?live=all", {
    //awayTeamName.innerHTML = teams['away']['name'];
    //lastMatchGoal.innerHTML = goals['home']+ " - " + goals['away'];
    if(matchesList['fixture']!==undefined){
-	for(var i = 0; i<matchesList.length;i++){
-        addMatchTile(matchesList[i]);
-   	}
+       
+      for(var i = 0; i<matchesList.length;i++){
+      	addMatchTile(matchesList[i]);
    }
+}
    else{
-	document.getElementById("matchTable").innerHTML = "Trenutno nema utakmica";
-   }
+    document.getElementById("matchTable").innerHTML = "Trenutno nema utakmica";
+        
 }}))
 .catch(err => {
     console.log(err);
