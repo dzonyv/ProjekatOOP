@@ -85,6 +85,7 @@ fetch("https://api-football-v1.p.rapidapi.com/v3/fixtures?live=all", {
    if(matchesList['fixture']!==undefined){
 	for(var i = 0; i<matchesList.length;i++){
         addMatchTile(matchesList[i]);
+   	}
    }
    else{
 	document.getElementById("matchTable").innerHTML = "Trenutno nema utakmica";
