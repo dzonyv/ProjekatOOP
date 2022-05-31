@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="osnovno.css">
-    <link rel="stylesheet" href="liga.css">
+    <link rel="stylesheet" href="widget.css">
+
 </head>
 <body class="flex">
 
@@ -44,10 +45,17 @@
     <main>
         <div class="container">
             <div id="leagues" class="container">
-
-            </div>
+                <div id="wg-api-football-standings"
+                data-host="api-football-v1.p.rapidapi.com"
+                data-league="2"
+                data-team=""
+                data-season="2021"
+                data-key="edc7e4668dmshced10aa2f349c12p13ed28jsn9025483f8d38"
+                data-theme=""
+                data-show-errors="true"
+                class="api_football_loader"></div>
+              </div>
         </div>
-        <script src="leagues.js"></script>
     </main>
 
     <footer>
@@ -97,6 +105,18 @@
             </div>
 
         </div>
+        <script>
+            const params = new URLSearchParams(window.location.search);
+            var lid = params.get('lid');
+            var widget = document.getElementById('wg-api-football-standings');
+            widget.setAttribute('data-league', lid);
+
+
+        </script>
+        <script
+           type="module"
+           src="https://widgets.api-sports.io/football/1.1.8/widget.js">
+       </script>
     </footer>
     
 </body>

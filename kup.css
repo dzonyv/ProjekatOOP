@@ -1,0 +1,28 @@
+.cup-tile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.cup-tile img {
+    width: 32px;
+    height: auto;
+    margin-right: 10px;
+}
+#cups img {
+    max-width: 100px;
+    max-height: 100px;
+}
+.linkkupa {
+    color: var(--secondary-color);
+    text-align: right;
+}
+:root {
+    --primary-color: rgb(255, 255, 255);
+    --secondary-color: rgb(0,0,0);
+}
+
+.darkmode {
+    --primary-color: rgb(14, 37, 58);
+    --secondary-color: rgb(255,255,255);
+}

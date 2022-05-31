@@ -1,3 +1,4 @@
+var popularCups = [2, 848, 3, 531, 143, 66, 732, 45, 81];
 var leagueshtml = document.getElementById("cups");
 const options = {
 	method: 'GET',
@@ -24,6 +25,9 @@ function AddCupTile(data){
     if (data['league']['type'] != "Cup") {
         return;
     }
+    if ( popularCups.includes(data['league']['id']) === false ){
+        return;
+    }
 
     var cuptile = document.createElement('div');
     cuptile.classList.add("cup-tile");
@@ -35,8 +39,8 @@ function AddCupTile(data){
     logo.src = data['league']['logo'];
 
     var link = document.createElement('a');
-    link.setAttribute('href', 'cup.html'+"#"+data['league']['id']);
-    link.setAttribute('class', 'linklige');
+    link.setAttribute('href', 'cupstd.html'+"?lid="+data['league']['id']);
+    link.setAttribute('class', 'linkkupa');
     link.textContent = data['league']['name'];
 
 

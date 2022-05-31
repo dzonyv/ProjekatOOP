@@ -1,92 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <link rel='stylesheet' type='text/css' href='nscore_css.css'>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NScore: Live Football Scores</title>
+    <title>Document</title>
+    <link rel="stylesheet" href="osnovno.css">
+    <link rel="stylesheet" href="widget.css">
+
 </head>
-<body>
+<body class="flex">
+
     <header>
-        <div class="meni">
-            <h1 class="logo"></h1>
-            <img src="NScore logo.png" class="logo">
-            <nav>
-              <ul>
-                <li><a href="NScore.html">LiveScores</a></li>
-                <li><a href="today.html">Today</a></li>
-                <li><a href="leagues.html">Leagues</a></li>
-                <li><a href="Cups.html">Cups</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><label>
-                  <input type="checkbox" id="darkm">
-                  <span class="check"></span>
-                </label></li>
-                <li><div class="korisnik">
-                  <p id="korisnik">
-                  </p>
-                </div></li>
-              </ul>
-              <script>myFunction()</script>
-            </nav>
-          </div>
-          <script>
+        <div class="container flex">
+
+            <div class="header-logo">
+                <img src="NScore logo.png">
+            </div>
+            <div>
+                <ul id="glavni-meni" class="flex column-gap-10">
+                    <li><a href="NScore.html">LiveScores</a></li>
+                    <li><a href="today.html">Today</a></li>
+                    <li><a href="leagues.html">Leagues</a></li>
+                    <li><a href="Cups.html">Cups</a></li>
+                    <li><a href="Login.html">Login</a></li>
+                    <li class="mode-prekidac">
+                        <label>
+                            <input type="checkbox" id="darkm" hidden>
+                            <div class="check"></div>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <script>
             var darkm=document.getElementById("darkm");
             darkm.onclick=function(){
-              document.body.classList.toggle("lightmode");
+              document.body.classList.toggle("darkmode");
               }
           </script>
     </header>
 
-    <section>
-      
-    </section>
+    <main>
+        <div class="container">
+            <div id="wg-api-football-fixtures"
+                data-host="api-football-v1.p.rapidapi.com"
+                data-refresh="0"
+                data-date="2022-05-31"
+                data-league=""
+                data-team=""
+                data-season=""
+                data-last=""
+                data-next=""
+                data-key="edc7e4668dmshced10aa2f349c12p13ed28jsn9025483f8d38"
+                data-theme=""
+                data-show-errors="true"
+                class="api_football_loader">
+            </div>
 
-    <footer class="footer">
-        <div class="l-footer">
-        <h1>
-        <img src="NScore logo.png" alt=""></h1>
-        <p>
-            NScore je sajt na kojem mozete uzivo pratiti rezultate svih fudbalskih utakmica, sa statistikom i ligaskim tabelama. Live utakmice su precizno azurirane, sa tacnim vremenom, strelcima pogodaka i asistentima, kartonima...  
-        </p>
+
         </div>
-        <ul class="r-footer">
-        <li>
-          <h2>
-        Social</h2>
-        <ul class="box">
-        <li><a href="#">Facebook</a></li>
-        <li><a href="https://twitter.com/">Twitter</a></li>
-        <li><a href="https://www.instagram.com/">Instagram</a></li>
-        <li><a href="https://www.tiktok.com/@kabare_dejana_andjusa">TikTok</a></li>
-        </ul>
-        </li>
-        <li class="features">
-          <h2>
-        Information</h2>
-        <ul class="box h-box">
-        <li><a href="#">Recommended Sites</a></li>
-        <li><a href="#">FAQ</a></li>
-        <li><a href="#">Advertise</a></li>
-        <li><a href="#">Customer Service</a></li>
-        </ul>
-        </li>
-        <li>
-          <h2>
-        Legal</h2>
-        <ul class="box">
-        <li><a href="#">Privacy Policy</a></li>
-        <li><a href="#">Terms of Use</a></li>
-        <li><a href="#">Contract</a></li>
-        </ul>
-        </li>
-        </ul>
-        <div class="b-footer">
-        <p>
-        All rights reserved © NScore 2022 </p>
+    </main>
+
+    <footer>
+        <div class="container">
+            
+            <div class="row flex column-gap-10">
+
+                <div class="footer-levo">
+                    <div class="footer-logo">
+                        <img src="NScore logo.png">
+                    </div>
+                    <div class="footer-opis">
+                        <p>NScore je sajt na kojem mozete uzivo pratiti rezultate svih fudbalskih utakmica, sa statistikom i ligaskim tabelama. Live utakmice su precizno azurirane, sa tacnim vremenom, strelcima pogodaka i asistentima, kartonima...  </p>
+                    </div>
+                </div>
+
+                <div class="footer-desno flex">
+                    <div class="linkovi">
+                        <ul>
+                            <li><a href="#">Facebook</a></li>
+                            <li><a href="https://twitter.com/">Twitter</a></li>
+                            <li><a href="https://www.instagram.com/">Instagram</a></li>
+                            <li><a href="https://www.tiktok.com/@kabare_dejana_andjusa">TikTok</a></li>
+                        </ul>
+                    </div>
+                    <div class="linkovi">
+                        <ul>
+                            <li><a href="#">Recommended Sites</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Advertise</a></li>
+                            <li><a href="#">Customer Service</a></li>
+                            </ul>
+                    </div>
+                    <div class="linkovi">
+                        <ul class="box">
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Use</a></li>
+                            <li><a href="#">Contract</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="row text-center">
+                <p class="copyright">All rights reserved © NScore 2022</p>
+            </div>
+
         </div>
-        </footer>
+        <script
+            type="module"
+            src="https://widgets.api-sports.io/football/1.1.8/widget.js">
+        </script>
+    </footer>
+    
 </body>
 </html>

@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+
+/* css za svaku stranicu, od esencijalnog znacaja (header, footer, container...) */
+
+html,
+body {
+    margin: 0;
+    height: 100%;
+    font-family: 'Bungee', cursive;
+}
+body {
+    flex-direction: column;
+}
+
+header {
+    flex-grow: 0;
+    background-color: rgb(14, 37, 58);
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+header > .container {
+    justify-content: space-between;
+}
+
+main {
+    flex-grow: 1;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    text-align: center;
+}
+:root {
+    --primary-color: rgb(255, 255, 255);
+    --secondary-color: rgb(0,0,0);
+}
+
+.darkmode {
+    --primary-color: rgb(14, 37, 58);
+    --secondary-color: rgb(255,255,255);
+}
+
+footer {
+    flex-grow: 0;
+    flex-flow: row wrap;
+    color: rgb(216, 203, 194);
+    background-color:rgb(14, 37, 58) ;
+    font-size: 12px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* glavni meni */
+#glavni-meni {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+}
+
+#glavni-meni ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+#glavni-meni li{
+    display: inline-block;
+    margin-left: 70px;
+    padding-top: 13px;
+
+    position: relative;
+}
+#glavni-meni a{
+    color: rgb(216, 203, 194);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 15px;
+}
+#glavni-meni li a:hover {
+    color: rgb(216, 203, 194);
+}
+#glavni-meni a::before {
+    content: '';
+    display: block;
+    height: 5px;
+    background-color: rgb(216, 203, 194);
+
+    position: absolute;
+    top: 0;
+    width: 0%;
+
+    transition: all ease-in-out 250ms;
+}
+
+#glavni-meni a:hover::before {
+    width: 100%;
+}
+
+/* checkbox */
+
+.check {
+    margin-top: 11px;
+    position: absolute;
+    display: block;
+    width: 40px;
+    height: 20px;
+    background: rgb(255, 255, 255);
+    cursor: pointer;
+    border-radius: 20px;
+    transition: ease-in 0.5s;
+
+}
+
+input[type="checkbox"]:checked~.check {
+    background: #fff;
+}
+
+.check::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    background: rgb(14, 37, 58);
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    transition: 0.5s;
+}
+
+input[type="checkbox"]:checked~.check:before {
+    transform: translateX(-20px);
+
+}
+
+.check::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    right: 2px;
+
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    transition: 0.5s;
+}
+
+input[type="checkbox"]:checked~.check:after {
+    transform: translateX(0px);
+
+}
+
+.mode-prekidac {
+    width: 40px;
+}
+
+
+/* footer detalji */
+.footer-levo {
+    flex-grow: 0;
+    min-width: 280px;
+    max-width: 320px;
+}
+.footer-desno {
+    flex-grow: 1;
+    align-content: stretch;
+}
+.linkovi {
+    flex-grow: 1;
+}
+
+.copyright {
+    margin: 0;
+    font-size: x-small;
+}
+footer ul {
+    list-style: none;
+    padding-left: 0;
+}
+footer li {
+    line-height: 3em;
+}
+.footer-opis p {
+    line-height: 1.75em;
+}
+footer a{
+    color: rgb(216, 203, 194);
+    text-decoration: none;
+}
+
+
+
+
+/* utilities */
+.container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    /*border: 1px solid red;*/
+    padding-top: 10px; 
+    padding-bottom: 10px; 
+}
+.row {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.column-gap-10 {
+    column-gap: 10px;
+}
+.row-gap-10 {
+    row-gap: 10px;
+}
+.flex {
+    display: flex;
+}
+.text-center {
+    text-align: center;
+}
