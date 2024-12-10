@@ -4,15 +4,15 @@ const options = {
 	method: 'GET',
 	headers: {
 		'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com',
-		'X-RapidAPI-Key': 'edc7e4668dmshced10aa2f349c12p13ed28jsn9025483f8d38'
+		'X-RapidAPI-Key': 'b5cfed2b13msh0231bd1bfb0d257p1e9a3cjsn92e0ed862e5f'
 	}
 };
 
-fetch('https://api-football-v1.p.rapidapi.com/v3/leagues?season=2021', options)
+fetch('https://api-football-v1.p.rapidapi.com/v3/leagues?season=2024', options)
 	.then(response => response.json())
 	.then(data => {
         console.log(data);
-        var leagues = data['response'];
+        var leagues = data['response']
 
         for(var i = 0; i<leagues.length;i++){
             AddCupTile(leagues[i]);
@@ -36,8 +36,7 @@ function AddCupTile(data){
     
 
     var logo = document.createElement('img');
-    logo.src = data['league']['logo'];
-
+    logo.src = data['league']['logo']
     var link = document.createElement('a');
     link.setAttribute('href', 'cupstd.html'+"?lid="+data['league']['id']);
     link.setAttribute('class', 'linkkupa');

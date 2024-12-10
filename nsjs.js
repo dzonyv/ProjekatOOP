@@ -51,7 +51,7 @@ function addMatchTile(data){
 
     //createing the score
     var score = document.createElement('p');
-    score.innerHTML = data['goals']['home'] + " - " + data['goals']['away'];
+    score.innerHTML = data['goals']['home'] + " - " + data['goals']['away']
 
     //append all the element to the parent
     matchtile.appendChild(homeTeam);
@@ -66,32 +66,21 @@ fetch("https://api-football-v1.p.rapidapi.com/v3/fixtures?live=all", {
     "method": "GET",
     "headers": {
         'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com',
-		'X-RapidAPI-Key': 'edc7e4668dmshced10aa2f349c12p13ed28jsn9025483f8d38'
+		'X-RapidAPI-Key': 'b5cfed2b13msh0231bd1bfb0d257p1e9a3cjsn92e0ed862e5f'
     }
 })
 .then(response => response.json().then(data => {
+    console.log('API Response:', data);
     var matchesList = data['response'];
-    var fixture = matchesList[0]['fixture'];
-    var goals = matchesList[0]['goals'];
-    var teams = matchesList[0]['teams'];
-    console.log(matchesList.length);
-   //Now let's set our first match
-   //elapsedTime.innerHTML = fixture['status']['elapsed'] + "'";
-   //homeTeamImage.src = teams['home']['logo'];
-   //homeTeamName.innerHTML = teams['home']['name'];
-   //awayTeamImage.src = teams['away']['logo'];
-   //awayTeamName.innerHTML = teams['away']['name'];
-   //lastMatchGoal.innerHTML = goals['home']+ " - " + goals['away'];
-   if(matchesList['fixture']!==undefined){
-       
-      for(var i = 0; i<matchesList.length;i++){
-      	addMatchTile(matchesList[i]);
-   }
-}
-   else{
-    document.getElementById("matchTable").innerHTML = "Trenutno nema utakmica";
-        
-}}))
+    console.log('Matches List:', matchesList);
+    if(matchesList.length > 0 && matchesList[0]['fixture'] !== undefined){
+        for(var i = 0; i < matchesList.length; i++){
+            addMatchTile(matchesList[i]);
+        }
+    } else {
+        document.getElementById("matchTable").innerHTML = "Trenutno nema utakmica";
+    }
+}))
 .catch(err => {
     console.log(err);
 });
