@@ -69,27 +69,6 @@
 .match-tile .team {
     width: 100px;
 }
-#pismeni{
-    width: auto;
-    background-color: blueviolet;
-    justify-content: space-between;
-    display: flex;
-}
-#pismeni1{
-    width: auto;
-    background-color: rgb(189, 155, 63);
-}
 
-#xx{
-    background-color: darkkhaki;
-}
-#xy{
-    background-color: beige;
-}
-#xz{
-    background-color: aqua;
-}
-#xx span{
-    background-color: blue;
-    border-radius: 40px;
-}
+
+
